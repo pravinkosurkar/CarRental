@@ -28,9 +28,13 @@ class CarSpeedViewModel(
         when {
             customer == null -> carSpeedStatus.showSpeedStatus("Unknown customer for rental ${carRental.rentalId}")
             event.speed > customer.maxSpeed -> {
-                carSpeedStatus.showAlertToDriver(event.vehicleId, "Over speed detected at ${event.speed} km/h")
+                carSpeedStatus.showAlertToDriver(
+                    event.vehicleId,
+                    "Over speed detected at ${event.speed} km/h"
+                )
                 monitorCarSpeedUseCase.execute(event, carRental, customer)
             }
+
             else -> carSpeedStatus.showSpeedStatus("Speed OK: ${event.speed} km/h")
         }
     }

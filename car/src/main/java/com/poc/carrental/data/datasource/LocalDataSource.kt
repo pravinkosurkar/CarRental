@@ -26,7 +26,7 @@ class LocalDataSource {
      *
      * @param customerId Unique id to the customer.
      * @param newLimit speed limit info.
-     *@return status of the speed update.
+     * @return status of the speed update.
      */
     fun updateSpeedLimit(customerId: String, newLimit: Int): Boolean {
         val customer = customers[customerId] ?: return false
