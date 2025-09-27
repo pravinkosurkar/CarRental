@@ -1,4 +1,6 @@
 package com.poc.carrental.domain.channel
 
-class CommunicationType {
+enum class CommunicationType {
+    FIREBASE,
+    AWS
 }
